@@ -47,6 +47,7 @@ char* strip(char* str) {
   result[i-first_non_space] = '\0';
 
   return result;
+ 
 }
 
 /*
@@ -65,7 +66,8 @@ int is_clean(char* str) {
   // the first is less than the second (in alphabetical order),
   // 0 if they're equal, and a positive value if the first is
   // greater than the second.
-  result = strcmp(str, cleaned);
+  result = strcmp(str, cleaned); 
+  free(cleaned);
 
   return result == 0;
 }
@@ -92,4 +94,5 @@ int main() {
   }
 
   return 0;
+ 
 }
